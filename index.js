@@ -136,6 +136,7 @@ client.on("interactionCreate", async (interaction) => {
   if (!command) return;
 
   interaction.author = interaction.user;
+  interaction.send = interaction.reply;
 
   try {
     await command.execute(interaction, client, config, db, Discord, allowed);

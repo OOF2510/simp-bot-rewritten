@@ -19,6 +19,6 @@ module.exports = {
       .setColor(config.embedColor)
       .setTimestamp();
 
-    await interaction.send({ embeds: [avEm] });
+    await interaction.reply({ embeds: [avEm] });
   },
 };
