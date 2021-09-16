@@ -1,0 +1,10 @@
+const { SlashCommandBuilder } = require("@discordjs/builders");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("cmd_name")
+    .setDescription("cmd_description"),
+  async execute(interaction, client, config, db, Discord, allowed) {
+    
+  },
+};
