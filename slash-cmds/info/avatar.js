@@ -4,9 +4,14 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("avatar")
     .setDescription("Gets a user's avatar")
-    .addUserOption(option => option.setName('user').setDescription('User to get avatar of').setRequired(false)),
-  async execute(interaction, client, config, db, Discord, allowed){
-    let user = interaction.options.getUser('user') || interaction.author
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("User to get avatar of")
+        .setRequired(false)
+    ),
+  async execute(interaction, client, config, db, Discord, allowed) {
+    let user = interaction.options.getUser("user") || interaction.author;
     let mem = interaction.guild.members.cache.get(user.id);
 
     let userNick = mem ? mem.displayName : user.username;
